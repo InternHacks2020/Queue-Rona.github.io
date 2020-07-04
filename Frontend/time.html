@@ -18,6 +18,23 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/time.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+
+    <!-- Modal -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#myModal").on('shown.bs.modal', function () {
+                $(this).find('input[type="text"]').focus();
+            });
+        });
+    </script>
+    <style>
+        .booktime {
+            margin: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,118 +43,113 @@
         <a style="float: right; padding-right: 16px;">User: Student/Staff</a>
     </div>
 
-    <div style="padding-left:16px">
+    <div style="padding-left:16px; padding-bottom: 16px;">
         <h2>Available Time Slots</h2>
     </div>
 
-    <div style="padding-left:16px; padding-bottom: 16px">
-        <p style="display: inline;">6:00 - 6:30 PM</p>
-        <!-- Trigger/Open The Modal -->
-        <button id="myBtn" style="float: right; margin-right:600px">Book Time</button>
+    <div style="padding-left:16px; padding-bottom: 30px">
+        <p style="display: inline; font-size: medium;">6:00 - 6:30 PM</p>
 
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
+        <div class="booktime" style="display: inline;">
+            <!-- Button HTML (to Trigger Modal) -->
+            <a href="#myModal" class="btn btn-primary" data-toggle="modal" style="float: right; margin-right:1000px">Book
+                Time</a>
 
-            <!-- Modal content -->
-            <div class="modal-content">
-                <p>Add Your Name</p>
-                <button id="confirm">Confirm Your Reservation</button>
+            <!-- Modal HTML -->
+            <div id="myModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Submit Reservation for 6:00 - 6:30 PM</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="inputName">Name</label>
+                                    <input type="text" class="form-control" id="inputName">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"> Confirm
+                                Reservation</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
 
-    <div style="padding-left:16px; padding-bottom: 16px">
-        <p style="display: inline;">6:45 - 7:15 PM</p>
-        <!-- Trigger/Open The Modal -->
-        <button id="myBtn2" style="float: right; margin-right:600px">Book Time</button>
+    <div style="padding-left:16px; padding-bottom: 30px">
+        <p style="display: inline; font-size: medium;">6:45 - 7:15 PM</p>
 
-        <!-- The Modal -->
-        <div id="myModal2" class="modal">
+        <div class="booktime" style="display: inline;">
+            <!-- Button HTML (to Trigger Modal) -->
+            <a href="#myModal" class="btn btn-primary" data-toggle="modal" style="float: right; margin-right:1000px">Book
+                Time</a>
 
-            <!-- Modal content -->
-            <div class="modal-content">
-                <p>Add Your Name</p>
-                <button id="confirm2">Confirm Your Reservation</button>
+            <!-- Modal HTML -->
+            <div id="myModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Submit Reservation for 6:45 - 7:15 PM</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="inputName">Name</label>
+                                    <input type="text" class="form-control" id="inputName">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"> Confirm
+                                Reservation</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
 
     <div style="padding-left:16px">
-        <p style="display: inline;">7:30 - 8:00 PM</p>
-        <!-- Trigger/Open The Modal -->
-        <button id="myBtn3" style="float: right; margin-right:600px">Book Time</button>
+        <p style="display: inline; font-size: medium;">7:30 - 8:00 PM</p>
 
-        <!-- The Modal -->
-        <div id="myModal3" class="modal">
+        <div class="booktime" style="display: inline;">
+            <!-- Button HTML (to Trigger Modal) -->
+            <a href="#myModal" class="btn btn-primary" data-toggle="modal" style="float: right; margin-right:1000px">Book
+                Time</a>
 
-            <!-- Modal content -->
-            <div class="modal-content">
-                <p>Add Your Name</p>
-                <button id="confirm3">Confirm Your Reservation</button>
+            <!-- Modal HTML -->
+            <div id="myModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Submit Reservation for 7:30 - 8:00 PM</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="inputName">Name</label>
+                                    <input type="text" class="form-control" id="inputName">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"> Confirm
+                                Reservation</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
-    </div>
-
-    <script>
-        // Get the modal
-        var modal = document.getElementById("myModal");
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
-
-        // When the user clicks on the button, open the modal 
-        btn.onclick = function () {
-            modal.style.display = "block";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        // BTN 2
-
-        var modal = document.getElementById("myModal2");
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn2");
-
-        // When the user clicks on the button, open the modal 
-        btn.onclick = function () {
-            modal.style.display = "block";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        // BTN 3
-
-        var modal = document.getElementById("myModal3");
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn3");
-
-        // When the user clicks on the button, open the modal 
-        btn.onclick = function () {
-            modal.style.display = "block";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        } 
-    </script>
     </div>
 </body>
 
