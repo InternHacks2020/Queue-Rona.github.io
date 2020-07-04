@@ -7,8 +7,8 @@
 
     <!-- SEO -->
     <meta name="description"
-        content="VJP Media Marketing is a digital marketing agency serving clients through the US, and a platform dedicated to empowering young women in business and marketing. ">
-    <meta name="author" content="VJP Media Marketing">
+        content="queue-rona is queue system that helps contain the spread of COVID in university dining halls.">
+    <meta name="author" content="queue-rona">
 
     <title>queue-rona</title>
 
@@ -17,87 +17,80 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/time.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="topnav">
-        <img style="width: 10%;" src="img/urx.png">
-        <a style="float: right;">User: Student/Staff</a>
+        <img style="width: 10%; padding-left: 16px; padding-top: 5px;" src="img/urx.png">
+        <a style="float: right; padding-right: 16px;">User: Student/Staff</a>
     </div>
 
     <div style="padding-left:16px">
         <h2>Available Time Slots</h2>
-        <p>Some content..</p>
     </div>
 
-    <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Book Time</button>
+    <div style="padding-left:16px; padding-bottom: 16px">
+        <p style="display: inline;">6:00 - 6:30 PM</p>
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn" style="float: right; margin-right:600px">Book Time</button>
 
-    <!-- The Modal -->
-    <div id="modalOne" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Add Your Name</p>
-            <p>Confirm Reservation</p>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <p>Add Your Name</p>
+                <button id="confirm">Confirm Your Reservation</button>
+            </div>
+
         </div>
     </div>
 
-    <br>
+    <div style="padding-left:16px; padding-bottom: 16px">
+        <p style="display: inline;">6:45 - 7:15 PM</p>
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn2" style="float: right; margin-right:600px">Book Time</button>
 
-    <!-- Trigger/Open The Modal -->
-    <button id="myBtn2">Book Time</button>
+        <!-- The Modal -->
+        <div id="myModal2" class="modal">
 
-    <!-- The Modal -->
-    <div id="modalTwo" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close2">&times;</span>
-            <p>Add Your Name</p>
-            <p>Confirm Reservation</p>
+            <!-- Modal content -->
+            <div class="modal-content">
+                <p>Add Your Name</p>
+                <button id="confirm2">Confirm Your Reservation</button>
+            </div>
+
         </div>
     </div>
 
-    <br>
+    <div style="padding-left:16px">
+        <p style="display: inline;">7:30 - 8:00 PM</p>
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn3" style="float: right; margin-right:600px">Book Time</button>
 
-    <!-- Trigger/Open The Modal -->
-    <button id="myBtn3">Book Time</button>
+        <!-- The Modal -->
+        <div id="myModal3" class="modal">
 
-    <!-- The Modal -->
-    <div id="modalThree" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close3">&times;</span>
-            <p>Add Your Name</p>
-            <p>Confirm Reservation</p>
+            <!-- Modal content -->
+            <div class="modal-content">
+                <p>Add Your Name</p>
+                <button id="confirm3">Confirm Your Reservation</button>
+            </div>
+
         </div>
     </div>
-
-    <br>
 
     <script>
         // Get the modal
-        var modal = document.getElementById("modalOne");
-        var modal = document.getElementById("modalTwo");
-        var modal = document.getElementById("modalThree");
-
+        var modal = document.getElementById("myModal");
 
         // Get the button that opens the modal
         var btn = document.getElementById("myBtn");
-        var btn = document.getElementById("myBtn2"); 
-        var btn = document.getElementById("myBtn3");
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks the button, open the modal 
+        // When the user clicks on the button, open the modal 
         btn.onclick = function () {
             modal.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
         }
 
         // When the user clicks anywhere outside of the modal, close it
@@ -106,6 +99,44 @@
                 modal.style.display = "none";
             }
         }
+
+        // BTN 2
+
+        var modal = document.getElementById("myModal2");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn2");
+
+        // When the user clicks on the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // BTN 3
+
+        var modal = document.getElementById("myModal3");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn3");
+
+        // When the user clicks on the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        } 
     </script>
     </div>
 </body>
