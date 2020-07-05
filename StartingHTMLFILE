@@ -1,22 +1,17 @@
-function updateTime(){
-    var dateTime = new Date();
-    var hours = dateTime.getHours();
-    var minutes = dateTime.getMinutes();
-    var seconds = dateTime.getSeconds();
-    var am_or_pm = document.getElementById("am-or-pm");
-
-    if(hours >= 12){
-        am_or_pm.innerHTML = 'PM';
-    }else{
-        am_or_pm.innerHTML = 'AM';
-    }
-
-    if(hours > 12){
-        hours = hours - 12;
-    }
-
-    document.getElementById("hours").innerHTML=hours;
-    document.getElementById("minutes").innerHTML=minutes;
-    document.getElementById("seconds").innerHTML=seconds;
+.clock{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid rgba(0,0,0,0.3);
+    padding: 3px 60px;
 }
-setInterval( updateTime, 1000);
+.font{
+    font-family: 'Exo', sans-serif;
+    font-size: 50px;
+    color: white
+}
+h1{
+    margin: 0px;
+    padding: 0px;
+}
