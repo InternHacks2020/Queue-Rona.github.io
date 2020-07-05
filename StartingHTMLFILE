@@ -1,37 +1,22 @@
-<html>
-    <head>
-        <title>Queue-Rona</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-    <!--Clock-->
-        <div class="container">
-            <div class="clock">
-                <h1 class="font">
-                    <span id="hours">12</span>
-                    <span>:</span>
-                    <span id="minutes">60</span>
-                    <span>:</span>
-                    <span id="seconds">60</span>
-                    <span id="am-or-pm">AM</span>
-    
-                </h1>
-            </div>
-            <script src="script.js"></script>
-        </div>
-        <header>
-        <!--NavBar-->
-            <div class="row">
-                <div class="logo">
-                    <img src = "images/clipart3477941.png">
-                </div>
-                <ul class="main-nav">
-                    <li class="active"><a href="">STUDENT</a></li>
-                    <li><a href="">STAFF</a></li>
-                    <li><a href="">READY TO EAT</a></li>
-            
-                </ul>
-            </div>
-        </header>
-    </body>
-</html>
+function updateTime(){
+    var dateTime = new Date();
+    var hours = dateTime.getHours();
+    var minutes = dateTime.getMinutes();
+    var seconds = dateTime.getSeconds();
+    var am_or_pm = document.getElementById("am-or-pm");
+
+    if(hours >= 12){
+        am_or_pm.innerHTML = 'PM';
+    }else{
+        am_or_pm.innerHTML = 'AM';
+    }
+
+    if(hours > 12){
+        hours = hours - 12;
+    }
+
+    document.getElementById("hours").innerHTML=hours;
+    document.getElementById("minutes").innerHTML=minutes;
+    document.getElementById("seconds").innerHTML=seconds;
+}
+setInterval( updateTime, 1000);
