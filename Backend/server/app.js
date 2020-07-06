@@ -10,8 +10,8 @@ const bodyParser = require('body-parser');
 app.use(express.json());
 
 //Import Routes from posts.js
-const postsRoute = require('../routes/posts');
-app.use('/posts', postsRoute);
+const postsRoute = require('../routes/user');
+app.use('/user', postsRoute);
 
 // ROUTES
 app.get('/', (req, res) => {
@@ -19,8 +19,9 @@ app.get('/', (req, res) => {
 });
 
 
-//CONNECT TO DB
-mongoose.connect(process.env.APP_DB_CONNECTION, { useNewUrlParser: true }, () => console.log('connected to DB!'));
+//CONN
+var URL = 'mongodb+srv://TeamRona:internhacks2020@cluster0.9ibkx.mongodb.net/Post?retryWrites=true&w=majority';
+mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log('connected to DB!'));
 const db = mongoose.connection
 db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('connected to database'))
