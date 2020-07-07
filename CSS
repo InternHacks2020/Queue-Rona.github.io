@@ -1,0 +1,120 @@
+/*
+home screen 
+body{
+    background-image: url("images/SUNY-Water-Tower2.jpg");
+}*/
+.hero
+{
+    position: absolute;
+    width: 1200px;
+    margin-left: 0;
+    margin-top: 0;
+}
+h2,
+h1
+{
+    color:black;
+    text-transform:uppercase;
+    font-size: 70px;
+    text-align: center;
+    margin-top:275px;
+
+}
+p{
+    text-align: center;
+}
+.button
+{
+   
+    text-align: center;
+}
+.btn
+{
+    border: 1px solid white;
+    padding: 10px 30px;
+    color: white;
+    text-decoration: none;
+    margin-right: 5px;
+    font-size: 13px;
+    text-transform:uppercase;
+}
+.btn-one
+{
+    background-color: darkorange;
+    font-family:"Roboto", sans-serif;
+}
+.hidden{
+    display: none;
+}
+.section.active{
+    opacity: 1;
+    z-index: 2;
+    -webkit-animation: slideSection 1s ease;
+    animation: slideSection 1s ease;
+}
+/*Time */
+.booktime {
+    margin: 20px;
+}
+body {
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #c5d9dd;
+  }
+  
+  .topnav a {
+    color: whitesmoke;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: inline;
+  }
+  
+  button {
+    background-color: #c5d9dd;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 50%; /* Could be more or less, depending on screen size */
+  }
+/* clock css  --> will be added later 
+.clock{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid rgba(0,0,0,0.3);
+    padding: 3px 60px;
+}
+.font{
+    font-family: 'Exo', sans-serif;
+    font-size: 50px;
+    color: white
+}
+h1{
+    margin: 0px;
+    padding: 0px;
+}
+*/
