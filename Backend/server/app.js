@@ -22,7 +22,8 @@ app.get('/', (req, res) => {
 //CONN
 
 const db = mongoose.connection
-mongoose.connect(process.env.APP_DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log('connected to DB!'));
+const DB_URL = 'mongodb+srv://TeamRona:internhacks2020@cluster0.9ibkx.mongodb.net/Post?retryWrites=true&w=majority';
+mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log('connected to DB!'));
 db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('connected to database'))
 
