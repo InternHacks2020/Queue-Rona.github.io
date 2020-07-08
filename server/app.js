@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 
 //MIDDLEWARE
 app.use(express.json());
+app.use(express.static('Frontend'))
 
 //Import Routes from posts.js
 const postsRoute = require('../routes/user');
