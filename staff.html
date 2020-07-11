@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <meta charset="UTF-8">
+        <title>Staff View</title>
+    </head>
+
+    <h3>Staff Mode</h3>
+
+    <body>
+        <p>Current Time:</p>
+        <div id="clockbox"></div>
+        <script type="text/javascript" src="js/timer.js"></script>
+        <p>Current Capacity: </p>
+        <form>
+            <label for="current_capacity"></label>
+            <input type="text" id="current_capacity" name="current_capacity">
+            <button class="button add">+</button>
+        `   <button class="button minus">-</button>
+        </form>
+        <p></p>
+        
+        <table style="width:100%">
+            <tr>
+              <th>Reservations Name</th>
+              <th colspan="2">Status</th> 
+            </tr>
+            <tr>
+              <td>Ashley</td>
+              <td style="background-color:green">Yes</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Bob</td>
+              <td>Yes</td> 
+              <td style="background-color:red">No</td>
+            </tr>
+            <tr>
+              <td>Christina</td>
+              <td style="background-color:green">Yes</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>David</td>
+              <td>Yes</td>
+              <td style="background-color:red">No</td>
+            </tr>
+        </table>
+
+        <div class="cap">
+            <p>50%</p>
+            <div class="caps">
+                <div class="caps_level" style="width:50%"></div>
+            </div>
+        </div>
+        <form>
+            <label for="capacity">Max Capacity</label>
+            <input type="text" id="capacity" name="capacity">
+        </form>
+        <!-- Clicking buttons to add/minus from capacity. Click change, enter new max capacity number-->
+        <p>Time Slots: </p>
+        <div class="dropdown">
+            <button class="dropbtn">Available</button>
+            <div class="dropdown-content">
+              <a href="#">6:00-6:30 PM, Max Capacity: 30</a>
+              <a href="#">6:45-7:15 PM, Max Capacity: 30</a>
+              <a href="#">7:30-8:00 PM, Max Capacity: 30</a>
+              <a href="#">Add New Time Slot, Set Capacity</a>
+            </div>
+        </div>
+    </body>
+</html>
