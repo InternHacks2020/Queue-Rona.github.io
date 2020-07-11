@@ -1,1 +1,233 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <title>Queue-Rona</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+
+    <!-- Modal -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>var element = document.getElementById("butt");
+
+        element.addEventListener("click", () => {
+            var section = document.getElementById(home)
+            if (home.style.display == "none") {
+                home.style.display = "block"
+            }
+            else {
+                home.style.display = "none";
+            }
+        });
+
+        var elem = document.getElementById("butt2");
+
+        elem.addEventListener("click", () => {
+            var section2 = document.getElementById(studentView)
+            if (studentView.style.display == "none") {
+                studentView.style.display = "block"
+            }
+            else {
+                studentView.style.display = "none";
+            }
+        });
+
+        $(document).ready(function () {
+            $("#myModal").on('shown.bs.modal', function () {
+                $(this).find('input[type="text"]').focus();
+            });
+        });
+
+
+
+
+        /* clock js
+        function updateTime(){
+            var dateTime = new Date();
+            var hours = dateTime.getHours();
+            var minutes = dateTime.getMinutes();
+            var seconds = dateTime.getSeconds();
+            var am_or_pm = document.getElementById("am-or-pm");
+
+            if(hours >= 12){
+                am_or_pm.innerHTML = 'PM';
+            }else{
+                am_or_pm.innerHTML = 'AM';
+            }
+
+            if(hours > 12){
+                hours = hours - 12;
+            }
+
+            document.getElementById("hours").innerHTML=hours;
+            document.getElementById("minutes").innerHTML=minutes;
+            document.getElementById("seconds").innerHTML=seconds;
+        }
+        setInterval( updateTime, 1000);
+        */
+    </script>
+</head>
+
+<body>
+
+
+
+    <section class="First-Section" id="home">
+        <div class="container">
+            <div class="text-content">
+                <p>URX University</p>
+                <h2>mission statement goes here</h2>
+                <div class="button" id="butt">
+                    <a href="#studentView" class="btn btn-one">I am a Student</a>
+                    <a href="#student" class="btn btn-one">I am a Staff</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+    <section id="StudentView" class="next-next-section">
+        <div class="topnav">
+            <img style="width: 10%; padding-left: 16px; padding-top: 5px;" src="img/urx.png">
+            <a style="float: right; padding-right: 16px;">User: Student/Staff</a>
+        </div>
+
+        <div style="padding-left:16px; padding-bottom: 16px;">
+            <h2>Available Time Slots</h2>
+        </div>
+
+        <div style="padding-left:16px; padding-bottom: 30px">
+            <p style="display: inline; font-size: medium;">6:00 - 6:30 PM</p>
+
+            <div class="booktime" style="display: inline;">
+                <!-- Button HTML (to Trigger Modal) -->
+                <a href="#myModal" class="btn btn-primary" data-toggle="modal"
+                    style="float: right; margin-right:1000px">Book
+                    Time</a>
+
+                <!-- Modal HTML -->
+                <div id="myModal" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"
+                                    aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">Submit Reservation for 6:00 - 6:30 PM</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="inputName">Name</label>
+                                        <input type="text" class="form-control" id="inputName">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"> Confirm
+                                    Reservation</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="padding-left:16px; padding-bottom: 30px">
+            <p style="display: inline; font-size: medium;">6:45 - 7:15 PM</p>
+
+            <div class="booktime" style="display: inline;">
+                <!-- Button HTML (to Trigger Modal) -->
+                <a href="#myModal" class="btn btn-primary" data-toggle="modal"
+                    style="float: right; margin-right:1000px">Book
+                    Time</a>
+
+                <!-- Modal HTML -->
+                <div id="myModal" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"
+                                    aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">Submit Reservation for 6:45 - 7:15 PM</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="inputName">Name</label>
+                                        <input type="text" class="form-control" id="inputName">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"> Confirm
+                                    Reservation</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="padding-left:16px">
+            <p style="display: inline; font-size: medium;">7:30 - 8:00 PM</p>
+
+            <div class="booktime" style="display: inline;">
+                <!-- Button HTML (to Trigger Modal) -->
+                <a href="#myModal" class="btn btn-primary" data-toggle="modal"
+                    style="float: right; margin-right:1000px">Book
+                    Time</a>
+
+                <!-- Modal HTML -->
+                <div id="myModal" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"
+                                    aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">Submit Reservation for 7:30 - 8:00 PM</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="inputName">Name</label>
+                                        <input type="text" class="form-control" id="inputName">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"> Confirm
+                                    Reservation</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- clock
+        <div class="container">
+            <div class="clock">
+                <h1 class="font">
+    
+                    <span id="hours">12</span>
+                    <span>:</span>
+                    <span id="minutes">60</span>
+                    <span>:</span>
+                    <span id="seconds">60</span>
+                    <span id="am-or-pm">AM</span>
+    
+                </h1>
+            </div>
+        </div>
+    -->
+
+
+</body>
+
+</html>
