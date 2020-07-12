@@ -17,13 +17,18 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
 </head>
 
-<body>
-    <form>
+<body style="margin: 5% 5%; width: 90%">
+    <a href="../../index.html"><button type="button" class="btn btn-light">Back</button></a> 
+
         <div class="imgcontainer">
-            <img src="img/tuftlogo.png" alt="Avatar" class="avatar">
+            <img style="height: 0%;" src="img/tuftlogo.png" alt="Avatar" class="avatar">
         </div>
 
         <div class="container">
@@ -31,13 +36,12 @@
             <input type="text" placeholder="Enter Username" name="uname" required>
             <label><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
-            <a href="staff.html"><button type="submit">Login</button></a>
+            <br><br><a href="staff.html"><button type="button" class="btn btn-light">Login</button></a> 
         </div>
 
-        <div class="container" style="background-color:#f1f1f1">
-            <a href="../../index.html"><button type="button" class="cancelbtn">Cancel</button></a>
+        <div class="container">
+            <a href="../../index.html"><button type="button" class="btn btn-light">Cancel</button></a> 
         </div>
-    </form>
 
 </body>
 

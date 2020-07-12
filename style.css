@@ -1,5 +1,7 @@
-body {
-  background-color: cornflowerblue;
+* {
+  font-family: 'Poppins', sans-serif;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 h3 {

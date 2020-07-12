@@ -1,73 +1,126 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="css/style.css">
-        <meta charset="UTF-8">
-        <title>Staff View</title>
-    </head>
 
-    <h3>Staff Mode</h3>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <body>
-        <p>Current Time:</p>
-        <div id="clockbox"></div>
-        <script type="text/javascript" src="js/timer.js"></script>
-        <p>Current Capacity: </p>
-        <form>
-            <label for="current_capacity"></label>
-            <input type="text" id="current_capacity" name="current_capacity">
-            <button class="button add">+</button>
-        `   <button class="button minus">-</button>
-        </form>
-        <p></p>
-        
-        <table style="width:100%">
-            <tr>
-              <th>Reservations Name</th>
-              <th colspan="2">Status</th> 
-            </tr>
-            <tr>
-              <td>Ashley</td>
-              <td style="background-color:green">Yes</td>
-              <td>No</td>
-            </tr>
-            <tr>
-              <td>Bob</td>
-              <td>Yes</td> 
-              <td style="background-color:red">No</td>
-            </tr>
-            <tr>
-              <td>Christina</td>
-              <td style="background-color:green">Yes</td>
-              <td>No</td>
-            </tr>
-            <tr>
-              <td>David</td>
-              <td>Yes</td>
-              <td style="background-color:red">No</td>
-            </tr>
-        </table>
+  <!-- SEO -->
+  <meta name="description"
+    content="queue-rona is queue system that helps contain the spread of COVID in university dining halls.">
+  <meta name="author" content="queue-rona">
 
-        <div class="cap">
-            <p>50%</p>
-            <div class="caps">
-                <div class="caps_level" style="width:50%"></div>
-            </div>
-        </div>
-        <form>
-            <label for="capacity">Max Capacity</label>
-            <input type="text" id="capacity" name="capacity">
-        </form>
-        <!-- Clicking buttons to add/minus from capacity. Click change, enter new max capacity number-->
-        <p>Time Slots: </p>
-        <div class="dropdown">
-            <button class="dropbtn">Available</button>
-            <div class="dropdown-content">
-              <a href="#">6:00-6:30 PM, Max Capacity: 30</a>
-              <a href="#">6:45-7:15 PM, Max Capacity: 30</a>
-              <a href="#">7:30-8:00 PM, Max Capacity: 30</a>
-              <a href="#">Add New Time Slot, Set Capacity</a>
-            </div>
-        </div>
-    </body>
+  <title>queue-rona</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/urx.png" type="image/png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+      height: 300px;
+      /* Should be removed. Only for demonstration */
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+  <script>
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      if (h > 12) { h -= 12 }
+      document.getElementById('txt').innerHTML =
+        h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+      if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+      return i;
+    }
+  </script>
+</head>
+
+<body style="margin: 5% 5%; width: 90%; font-family: Poppins;">
+  <a href="../../index.html"><button type="button" class="btn btn-light">Back</button></a>
+
+  <div style="background-color: white; text-align: center;">
+    <div class="row">
+      <div class="column">
+        <h2>Current Time</h2>
+
+        <body onload="startTime()">
+          <div style="font-size: 100px" id="txt"></div>
+      </div>
+
+      <div class="column">
+        <h2>Current Capacity</h2>
+        <div style="font-size: 100px">22/30</div>
+        <progress value="22" max="30" style="color: #3E8EDE; border-radius: 25px;"></progress>
+
+      </div>
+
+      <table style="width:90%; text-align: center; margin: 5% 5%;">
+        <tr>
+          <th>Student Name</th>
+          <th colspan="2">Status</th>
+        </tr>
+        <tr>
+          <td>Ashley</td>
+          <td style="background-color: #9ee09e">Yes</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Bob</td>
+          <td>Yes</td>
+          <td style="background-color:#ff6663">No</td>
+        </tr>
+        <tr>
+          <td>Christina</td>
+          <td style="background-color:#9ee09e">Yes</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>David</td>
+          <td>Yes</td>
+          <td style="background-color:#ff6663">No</td>
+        </tr>
+      </table>
+
+      <!-- Clicking buttons to add/minus from capacity. Click change, enter new max capacity number
+    <p>Time Slots: </p>
+    <div class="dropdown">
+      <button class="dropbtn">Available</button>
+      <div class="dropdown-content">
+        <a href="#">6:00-6:30 PM, Max Capacity: 30</a>
+        <a href="#">6:45-7:15 PM, Max Capacity: 30</a>
+        <a href="#">7:30-8:00 PM, Max Capacity: 30</a>
+        <a href="#">Add New Time Slot, Set Capacity</a>
+      </div>
+    </div> -->
+</body>
+
 </html>

@@ -1,5 +1,8 @@
-body {
-  font-family: "DM Sans", sans-serif;
+* {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .topnav {
@@ -14,11 +17,6 @@ body {
   text-decoration: none;
   font-size: 17px;
   display: inline;
-}
-
-button {
-  background-color: #c5d9dd;
-  font-family: "DM Sans", sans-serif;
 }
 
 .modal {
@@ -75,12 +73,11 @@ button:hover {
 
 .imgcontainer {
   text-align: center;
-  margin: 24px 0 12px 0;
 }
 /*set image properties*/
 
 img.avatar {
-  width: 40%;
+  width: 20%;
   border-radius: 50%;
 }
 /*set padding to the container*/
@@ -201,10 +198,6 @@ h1{
   padding: 0px;
 }
 */
-
-body {
-  background-color: cornflowerblue;
-}
 
 h3 {
   text-align: center;

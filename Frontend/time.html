@@ -16,8 +16,15 @@
     <link rel="icon" href="img/urx.png" type="image/png">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
     <!-- Modal -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -37,120 +44,49 @@
     </style>
 </head>
 
-<body>
-    <div class="topnav">
-        <img style="width: 10%; padding-left: 16px; padding-top: 5px;" src="img/urx.png">
-        <a style="float: right; padding-right: 16px;">User: Student/Staff</a>
+<body style="margin: 5% 5%; width: 90%">
+    <a href="../../index.html"><button type="button" class="btn btn-light">Back</button></a>
+
+    <div style="padding-left:16px; padding-bottom: 16px; text-align: center;">
+        <h2><strong>Available Time Slots</strong></h2>
     </div>
-
-    <div style="padding-left:16px; padding-bottom: 16px;">
-        <h2>Available Time Slots</h2>
-    </div>
-
-    <div style="padding-left:16px; padding-bottom: 30px">
-        <p style="display: inline; font-size: medium;">6:00 - 6:30 PM</p>
-
-        <div class="booktime" style="display: inline;">
-            <!-- Button HTML (to Trigger Modal) -->
-            <a href="#myModal" class="btn btn-primary" data-toggle="modal" style="float: right; margin-right:1000px">Book
-                Time</a>
-
-            <!-- Modal HTML -->
-            <div id="myModal" class="modal fade">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">Submit Reservation for 6:00 - 6:30 PM</h4>
+    
+    <div style="display: inline-block; font-size: medium;">6:00 - 6:30 PM</div>
+    <button style="margin-left: 10%; background-color: #3E8EDE !important; color: white; font-family: Poppins;"
+        id="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Book
+        Time</button><br><br><br>
+    <div style="display: inline-block; font-size: medium;">6:30 - 6:45 PM</div>
+    <button style="margin-left: 10%; background-color: #3E8EDE !important; color: white; font-family: Poppins"
+        id="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Book
+        Time</button><br><br><br>
+    <div style="display: inline-block; font-size: medium;">8:00 - 8:30 PM</div>
+    <button style="margin-left: 10%; background-color: #3E8EDE !important; color: white; font-family: Poppins"
+        id="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Book
+        Time</button><br><br><br>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Name</label>
+                            <input type="text" class="form-control" id="recipient-name">
                         </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="inputName">Name</label>
-                                    <input type="text" class="form-control" id="inputName">
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"> Confirm
-                                Reservation</button>
-                        </div>
-                    </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <a href="confirm.html"><button type="button" class="btn btn-success">Confirm
+                            Reservation</button></a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div style="padding-left:16px; padding-bottom: 30px">
-        <p style="display: inline; font-size: medium;">6:45 - 7:15 PM</p>
 
-        <div class="booktime" style="display: inline;">
-            <!-- Button HTML (to Trigger Modal) -->
-            <a href="#myModal" class="btn btn-primary" data-toggle="modal" style="float: right; margin-right:1000px">Book
-                Time</a>
 
-            <!-- Modal HTML -->
-            <div id="myModal" class="modal fade">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">Submit Reservation for 6:45 - 7:15 PM</h4>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="inputName">Name</label>
-                                    <input type="text" class="form-control" id="inputName">
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"> Confirm
-                                Reservation</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div style="padding-left:16px">
-        <p style="display: inline; font-size: medium;">7:30 - 8:00 PM</p>
-
-        <div class="booktime" style="display: inline;">
-            <!-- Button HTML (to Trigger Modal) -->
-            <a href="#myModal" class="btn btn-primary" data-toggle="modal" style="float: right; margin-right:1000px">Book
-                Time</a>
-
-            <!-- Modal HTML -->
-            <div id="myModal" class="modal fade">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">Submit Reservation for 7:30 - 8:00 PM</h4>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="inputName">Name</label>
-                                    <input type="text" class="form-control" id="inputName">
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"> Confirm
-                                Reservation</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
