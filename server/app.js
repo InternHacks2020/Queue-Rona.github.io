@@ -19,12 +19,17 @@ app.get('/', (req, res) => {
     res.send('This is a test for get method!');
 });
 
+const timeslotsRoute = require('./routes/timeslots');
+app.use('/timeslots', timeslotsRoute);
 
-//CONN
+const waitlistedRoute = require('./routes/waitlisted');
+app.use('/waitlisted', waitlistedRoute)
+
+//CONNECTING THE DATABASE
 
 const db = mongoose.connection
-const DB_URL = 'mongodb+srv://TeamRona:internhacks2020@cluster0.9ibkx.mongodb.net/Post?retryWrites=true&w=majority';
-mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log('connected to DB!'));
+var URL = 'mongodb+srv://TeamRona:internhacks2020@cluster0.9ibkx.mongodb.net/Post?retryWrites=true&w=majority';
+mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log('connected to DB!'));
 db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('connected to database'))
 
