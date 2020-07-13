@@ -42,7 +42,7 @@ router.put('/', async(req, res) => {
         if (err) {
             return res.json({ "message": err });;
         } else {
-            if (timeslots.current_capacity != timeslots.max_capacity) {
+            if (timeslots.current_capacity < timeslots.max_capacity) {
                 timeslots.reserved_students.push(req.body.reserved_students[0]);
                 timeslots.current_capacity = timeslots.current_capacity + 1;
                 timeslots.save();

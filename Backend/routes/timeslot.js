@@ -11,7 +11,7 @@ const Timeslots = require('../models/Timeslots');
 const { exec } = require('child_process');
 ​
 ​
-//GET POSTS:
+//GET timeslots:
 router.get('/', async(req, res) => {
     try {
         await Timeslots.find().exec((err, timeslots) => {
@@ -38,8 +38,8 @@ router.post('/', async(req, res) => {
 ​
 ​
 //DELETE ALL POST:
-router.delete('/:postID', async(req, res) => {
-    await Post.remove((err, timeslots) => {
+router.delete('/:timeSlotID', async(req, res) => {
+    await Timeslots.remove((err, timeslots) => {
         if (err) return res.json({ "message": err });
         res.json(timeslots);
     });
