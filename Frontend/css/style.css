@@ -1,8 +1,6 @@
 * {
   font-family: 'Poppins', sans-serif;
   background-color: white;
-  overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .topnav {
