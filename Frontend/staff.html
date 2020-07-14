@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO -->
+  <meta name="description"
+    content="queue-rona is queue system that helps contain the spread of COVID in university dining halls.">
+  <meta name="author" content="queue-rona">
+
+  <title>queue-rona</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/urx.png" type="image/png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+      height: 300px;
+      /* Should be removed. Only for demonstration */
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+  <script>
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      if (h > 12) { h -= 12 }
+      document.getElementById('txt').innerHTML =
+        h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+      if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+      return i;
+    }
+  </script>
+</head>
+
+<body style="margin: 5% 5%; width: 90%; font-family: Poppins;">
+  <a href="stafflogin.html"><button type="button" class="btn btn-light">Back</button></a>
+
+  <div style="background-color: white; text-align: center;">
+    <div class="row">
+      <div class="column">
+        <h2>Current Time</h2>
+
+        <body onload="startTime()">
+          <div style="font-size: 100px" id="txt"></div>
+      </div>
+
+      <div class="column">
+        <h2>Current Capacity</h2>
+        <div style="font-size: 100px">22/30</div>
+        <progress value="22" max="30" style="color: #3E8EDE; border-radius: 25px;"></progress>
+
+      </div>
+    </div>
+
+    <br><button style="margin: 1% 5%; width: 90%; font-family: Poppins;" type="button" class="btn btn-light">Add
+      Student</button>
+    <table style="width:90%; text-align: center; margin: 1% 5%;">
+      <tr>
+        <th>Student Name</th>
+        <th colspan="2">Status</th>
+      </tr>
+      <tr>
+        <td>Ashley</td>
+        <td style="background-color: #9ee09e">Yes</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Bob</td>
+        <td>Yes</td>
+        <td style="background-color:#ff6663">No</td>
+      </tr>
+      <tr>
+        <td>Christina</td>
+        <td style="background-color:#9ee09e">Yes</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>David</td>
+        <td>Yes</td>
+        <td style="background-color:#ff6663">No</td>
+      </tr>
+    </table>
+</body>
+
+</html>

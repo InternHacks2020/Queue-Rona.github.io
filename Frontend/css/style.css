@@ -1,5 +1,6 @@
-body {
-  font-family: 'DM Sans', sans-serif;
+* {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
 }
 
 .topnav {
@@ -14,11 +15,6 @@ body {
   text-decoration: none;
   font-size: 17px;
   display: inline;
-}
-
-button {
-  background-color: #c5d9dd;
-  font-family: 'DM Sans', sans-serif;
 }
 
 .modal {
@@ -42,74 +38,310 @@ button {
   height: 50%; /* Could be more or less, depending on screen size */
 }
 
-form { 
-  border: 3px solid #f1f1f1; 
-} 
-/*assign full width inputs*/ 
+form {
+  border: 3px solid #f1f1f1;
+}
+/*assign full width inputs*/
 
-input[type=text], 
-input[type=password] { 
-  width: 100%; 
-  padding: 12px 20px; 
-  margin: 8px 0; 
-  display: inline-block; 
-  border: 1px solid #ccc; 
-  box-sizing: border-box; 
-} 
-/*set a style for the buttons*/ 
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+/*set a style for the buttons*/
 
-button { 
-  background-color: #4CAF50; 
-  color: white; 
-  padding: 14px 20px; 
-  margin: 8px 0; 
-  border: none; 
-  cursor: pointer; 
-  width: 100%; 
-} 
-/* set a hover effect for the button*/ 
 
-button:hover { 
-  opacity: 0.8; 
-} 
-/*set extra style for the cancel button*/ 
+/* set a hover effect for the button*/
 
-.cancelbtn { 
-  width: auto; 
-  padding: 10px 18px; 
-  background-color: #f44336; 
-} 
-/*centre the display image inside the container*/ 
+button:hover {
+  opacity: 0.8;
+}
+/*set extra style for the cancel button*/
 
-.imgcontainer { 
-  text-align: center; 
-  margin: 24px 0 12px 0; 
-} 
-/*set image properties*/ 
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+/*centre the display image inside the container*/
 
-img.avatar { 
-  width: 40%; 
-  border-radius: 50%; 
-} 
-/*set padding to the container*/ 
+.imgcontainer {
+  text-align: center;
+}
+/*set image properties*/
 
-.container { 
-  padding: 16px; 
-} 
-/*set the forgot password text*/ 
+img.avatar {
+  width: 20%;
+  border-radius: 50%;
+}
+/*set padding to the container*/
 
-span.psw { 
-  float: right; 
-  padding-top: 16px; 
-} 
-/*set styles for span and cancel button on small screens*/ 
+.container {
+  padding: 16px;
+}
+/*set the forgot password text*/
 
-@media screen and (max-width: 300px) { 
-  span.psw { 
-    display: block; 
-    float: none; 
-  } 
-  .cancelbtn { 
-    width: 100%; 
-  } 
-} 
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+/*set styles for span and cancel button on small screens*/
+
+/*
+home screen 
+body{
+    background-image: url("images/SUNY-Water-Tower2.jpg");
+}*
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.First-Section {
+  color: black;
+  text-transform: uppercase;
+  font-size: 70px;
+  text-align: center;
+  margin-top: 275px;
+}
+.p {
+  text-align: center;
+}
+
+.btn {
+  border: 1px solid white;
+  padding: 10px 30px;
+  color: white;
+  text-decoration: none;
+  margin-right: 5px;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+.btn-one {
+  background-color: darkorange;
+  font-family: "Roboto", sans-serif;
+}
+.hidden {
+  display: none;
+}
+
+/*Time */
+.booktime {
+  margin: 20px;
+}
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #c5d9dd;
+}
+
+.topnav a {
+  color: whitesmoke;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: inline;
+}
+
+button {
+  background-color: #c5d9dd;
+  font-family: "DM Sans", sans-serif;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  height: 50%; /* Could be more or less, depending on screen size */
+}
+/* clock css  --> will be added later 
+.clock{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border: 1px solid rgba(0,0,0,0.3);
+  padding: 3px 60px;
+}
+.font{
+  font-family: 'Exo', sans-serif;
+  font-size: 50px;
+  color: white
+}
+h1{
+  margin: 0px;
+  padding: 0px;
+}
+*/
+
+h3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: xx-large;
+  color: white
+}
+
+p {
+  text-align: left;
+  font-weight: bold;
+  font-size: x-large;
+  color: white
+}
+
+.clock{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border: 1px solid rgba(0,0,0,0.3);
+  padding: 3px 60px;
+}
+
+.cap {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.cap p {
+  color:#fff;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  padding: 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  float: right;
+  position: relative;
+  top: -25px;
+}
+
+.caps {
+  background: #262626;
+  padding: 4px;
+  box-sizing: border-box;
+  border-radius: 25px;
+}
+
+.caps_level {
+  background: green;
+  width:100%;
+  height: 10px;
+  border-radius: 25px;
+}
+
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+#clockbox {
+  font-size: large;
+  color: black;
+  clear: none;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 15px;
+  text-align: center
+}
+
+table {
+  border-spacing: 5px;
+}
+
+.split {
+  height: 70%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  margin-top: 300px;
+}
+
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+.right {
+  right: 0;
+  background-color: red;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
