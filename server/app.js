@@ -4,13 +4,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const bodyParser = require('body-parser');
-var cors = require('cors')
+var cors = require('cors');
 
-app.use(cors()) 
+app.use(cors());
 
 //MIDDLEWARE
 app.use(express.json());
-app.use(express.static('Frontend'))
+app.use(express.static('Frontend'));
 
 //Import Routes from posts.js
 const postsRoute = require('../routes/user');
