@@ -11,6 +11,8 @@ const merge = require("merge-stream");
 const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
+const exec = require('gulp-exec');
+const nodemon = require('gulp-nodemon');
 
 // Load package.json for banner
 const pkg = require('./package.json');
@@ -99,6 +101,15 @@ function css() {
     .pipe(browsersync.stream());
 }
 
+gulp.task('server', function (done) {
+  nodemon({
+    script: 'server/app.js'
+  , ext: 'js html'
+  , env: { 'NODE_ENV': 'development' }
+  , done: done
+  })
+});
+
 // Watch files
 function watchFiles() {
   gulp.watch("./scss/**/*", css);
@@ -108,7 +119,7 @@ function watchFiles() {
 // Define complex tasks
 const vendor = gulp.series(clean, modules);
 const build = gulp.series(vendor, css);
-const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
+const watch = gulp.series(build, gulp.parallel('server', watchFiles, browserSync));
 
 // Export tasks
 exports.css = css;
