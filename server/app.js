@@ -36,4 +36,4 @@ db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('connected to database'))
 
 // Start listening to the server:
-app.listen(3000, () => console.log("server started"))
+app.listen(3002, () => console.log("server started"))
