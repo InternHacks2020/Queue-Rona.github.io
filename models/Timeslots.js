@@ -1,10 +1,7 @@
 const mongoose = require('mongoose');
 const { db } = require('./reservation-mod');
-​
 const TimeslotSchema = mongoose.Schema({
-​
 
-​
         reserved_students: Array,
 
         waitlisted_students: Array,
@@ -18,11 +15,8 @@ const TimeslotSchema = mongoose.Schema({
         end_time: Date, String
 }
      ,{
-​
         collection: 'timeslots'
     }
-​
 );
 
-​
 module.exports = mongoose.model('Timeslots', TimeslotSchema);

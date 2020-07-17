@@ -8,9 +8,6 @@ mongoose.set('debug', true);
 const bodyParser = require('body-parser');
 const Timeslots= require('../models/Timeslots')
 const { time } = require('console');
-
-​
-​
 //GET POSTS:
 router.get('/', async(req, res) => {
     try {
@@ -26,16 +23,11 @@ router.get('/', async(req, res) => {
 router.put('/', async(req, res) => {
     var timeslots = new Timeslots({
         "start_time": req.body.start_time,
-​
         "end_time": req.body.end_time,
-​
         "max_capacity": req.body.max_capacity,
-​
         "current_capacity": req.body.current_capacity,
-​
         "waitlisted_students": req.body.waitlisted_students
     });
-​
     await Timeslots.findOne({
         start_time: timeslots.start_time
     }).exec((err, timeslots) => {
@@ -53,14 +45,9 @@ router.put('/', async(req, res) => {
             res.json(timeslots);
         }
     });
-​
 });
-​
 //SUBMIT POSTS:
 
-​
-​
-​
 //DELETE ALL POST:
 router.delete('/', async(req, res) => {
     await Timeslots.findOne({
@@ -83,5 +70,4 @@ router.delete('/', async(req, res) => {
     });
 });
 
-​
 module.exports = router;

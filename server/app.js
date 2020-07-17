@@ -21,10 +21,10 @@ app.get('/', (req, res) => {
     res.send('This is a test for get method!');
 });
 
-const timeslotsRoute = require('./routes/timeslots');
+const timeslotsRoute = require('../routes/timeslot');
 app.use('/timeslots', timeslotsRoute);
 
-const waitlistedRoute = require('./routes/waitlisted');
+const waitlistedRoute = require('../routes/waitlisted');
 app.use('/waitlisted', waitlistedRoute)
 
 //CONNECTING THE DATABASE

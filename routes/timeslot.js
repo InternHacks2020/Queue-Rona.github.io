@@ -9,8 +9,6 @@ mongoose.set('debug', true);
 const bodyParser = require('body-parser');
 const Timeslots = require('../models/Timeslots');
 const { exec } = require('child_process');
-​
-​
 //GET timeslots:
 router.get('/', async(req, res) => {
     try {
@@ -22,7 +20,6 @@ router.get('/', async(req, res) => {
         res.json({ message: err });
     }
 });
-​
 //SUBMIT POSTS:
 router.post('/', async(req, res) => {
     var timeslots = new Timeslots(
@@ -32,11 +29,7 @@ router.post('/', async(req, res) => {
         if (err) return res.json({ "message": err });
         res.json(timeslots);
     });
-​
 });
-​
-​
-​
 //DELETE ALL POST:
 router.delete('/:timeSlotID', async(req, res) => {
     await Timeslots.remove((err, timeslots) => {
@@ -44,7 +37,4 @@ router.delete('/:timeSlotID', async(req, res) => {
         res.json(timeslots);
     });
 });
-​
-​
-​
 module.exports = router;
