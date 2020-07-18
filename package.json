@@ -1,34 +1,13 @@
 {
-    "title": "Landing Page",
-    "name": "startbootstrap-landing-page",
-    "version": "5.0.8",
+    "name": "ronadatabase",
+    "version": "1.0.0",
+    "description": "",
     "scripts": {
         "start": "node_modules/.bin/gulp prod",
         "local": "node_modules/.bin/gulp watch"
     },
-    "description": "An HTML landing page template built with Bootstrap",
-    "keywords": [
-        "css",
-        "sass",
-        "html",
-        "responsive",
-        "theme",
-        "template"
-    ],
-    "homepage": "https://startbootstrap.com/themes/landing-page",
-    "bugs": {
-        "url": "https://github.com/StartBootstrap/startbootstrap-landing-page/issues",
-        "email": "feedback@startbootstrap.com"
-    },
-    "license": "MIT",
-    "author": "Start Bootstrap",
-    "contributors": [
-        "David Miller (http://davidmiller.io/)"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/StartBootstrap/startbootstrap-landing-page.git"
-    },
+    "author": "",
+    "license": "ISC",
     "dependencies": {
         "@fortawesome/fontawesome-free": "5.13.1",
         "bootstrap": "4.5.0",
