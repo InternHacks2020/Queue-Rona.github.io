@@ -12,6 +12,7 @@ const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 const nodemon = require('gulp-nodemon');
+const exec = require('child_process').exec;
 
 // Load package.json for banner
 const pkg = require('./package.json');
@@ -29,7 +30,7 @@ const banner = ['/*!\n',
 function browserSync(done) {
   browsersync.init({
     server: {
-      baseDir: "./"
+      baseDir: "./Frontend"
     },
     port: 3000
   });
@@ -100,13 +101,21 @@ function css() {
     .pipe(browsersync.stream());
 }
 
-gulp.task('server', function (done) {
+gulp.task('nodemon', function (done) {
   nodemon({
     script: 'server/app.js'
   , ext: 'js html'
   , env: { 'NODE_ENV': 'development' }
   , done: done
   })
+});
+
+gulp.task('server', function (cb) {
+  exec('node server/app.js', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
 });
 
 // Watch files
@@ -118,7 +127,8 @@ function watchFiles() {
 // Define complex tasks
 const vendor = gulp.series(clean, modules);
 const build = gulp.series(vendor, css);
-const watch = gulp.series(build, gulp.parallel('server', watchFiles, browserSync));
+const watch = gulp.series(build, gulp.parallel('nodemon', watchFiles, browserSync));
+const prod = gulp.series(build, gulp.parallel('server'));
 
 // Export tasks
 exports.css = css;
@@ -127,3 +137,4 @@ exports.vendor = vendor;
 exports.build = build;
 exports.watch = watch;
 exports.default = build;
+exports.prod = prod;

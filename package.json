@@ -3,7 +3,8 @@
     "name": "startbootstrap-landing-page",
     "version": "5.0.8",
     "scripts": {
-        "start": "node_modules/.bin/gulp watch"
+        "start": "node_modules/.bin/gulp prod",
+        "local": "node_modules/.bin/gulp watch"
     },
     "description": "An HTML landing page template built with Bootstrap",
     "keywords": [
@@ -39,7 +40,10 @@
         "express": "^4.17.1",
         "mongoose": "^5.9.21",
         "cors": "2.8.5",
-        "gulp-nodemon": "2.5.0",
+        "gulp-exec": "5.0.0",
+        "gulp-nodemon": "2.5.0"
+    },
+    "devDependencies": {
         "browser-sync": "2.26.7",
         "del": "5.1.0",
         "gulp": "4.0.2",
