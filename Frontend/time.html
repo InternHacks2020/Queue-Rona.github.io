@@ -80,7 +80,7 @@
     </style>
 </head>
 
-<body style="margin: 5% 5%; width: 90%">
+<body style="margin: 5% 5%; width: 90%"  onload="listTimeslots(); startTime(); printNumberOfReservedStudents()">
     <a href="../../index.html"><button type="button" class="btn btn-light">Back</button></a>
 
     <div style="padding-left:16px; padding-bottom: 16px; text-align: center;">
@@ -88,106 +88,198 @@
             <div class="column">
                 <h2>Current Time</h2>
 
-                <body onload="startTime()">
+                
                     <div style="font-size: 100px" id="txt"></div>
             </div>
 
-            <div class="column">
-                <h2>Current Capacity</h2>
-                <div style="font-size: 100px">22/30</div>
-                <progress value="22" max="30" style="color: #3E8EDE; border-radius: 25px;"></progress>
-
-            </div>
+            <div class="column" id='capacity'> </div>
         </div>
     </div>
 
-    <div style="display: inline-block; font-size: medium;">6:00 - 6:30 PM</div>
-    <button style="margin-left: 10%; background-color: #3E8EDE !important; color: white; font-family: Poppins;"
-        id="button" class="btn btn-light" data-toggle="modal" data-target="#modal1" data-whatever="@mdo">Book
-        Time</button><br><br><br>
-    <div style="display: inline-block; font-size: medium;">6:30 - 6:45 PM</div>
-    <button style="margin-left: 10%; background-color: #3E8EDE !important; color: white; font-family: Poppins"
-        id="button" class="btn btn-light" data-toggle="modal" data-target="#modal2" data-whatever="@mdo">Book
-        Time</button><br><br><br>
-    <div style="display: inline-block; font-size: medium;">8:00 - 8:30 PM</div>
-    <button style="margin-left: 10%; background-color: #3E8EDE !important; color: white; font-family: Poppins"
-        id="button" class="btn btn-light" data-toggle="modal" data-target="#modal3" data-whatever="@mdo">Book
-        Time</button><br><br><br>
+    <div id='list-timeslots-on-page'>
 
-    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <form>
-                        <div class="modal-header" style="font-size: large; font-weight: bolder;">
-                            Book Reservation for 6:00 - 6:30 PM
-                        </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Name</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <a href="confirm.html"><button type="button" class="btn btn-success">Confirm
-                            Reservation</button></a>
-                </div>
-            </div>
-        </div>
     </div>
-
-    <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <form>
-                        <div class="modal-header" style="font-size: large; font-weight: bolder;">
-                            Book Reservation for 6:30 - 6:45 PM
-                        </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Name</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <a href="confirm.html"><button type="button" class="btn btn-success">Confirm
-                            Reservation</button></a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <form>
-                        <div class="modal-header" style="font-size: large; font-weight: bolder;">
-                            Book Reservation for 8:00 - 8:30 PM
-                        </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Name</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <a href="confirm.html"><button type="button" class="btn btn-success">Confirm
-                            Reservation</button></a>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
 
 
 </body>
+
+
+<script type="text/javascript">
+    // Function to retrieve songs from new release albums
+function listTimeslots() {
+  
+    url = "http://127.0.0.1:3000/timeslots";
+    var request = new XMLHttpRequest();
+    request.open("GET", url, true);
+
+    request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) {
+          data = request.responseText;
+          data = JSON.parse(data);
+         printTimeslotsToPage(data);
+        };
+    };
+    request.send();
+};
+
+function reserveTimeslot() {
+  
+    url = "http://127.0.0.1:3000/timeslots";
+    var request = new XMLHttpRequest();
+    request.open("POST", url, true);
+    request.setRequestHeader("Content-type", "application/json");
+
+    request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) {
+        
+        };
+    };
+      var data = JSON.stringify({
+        "start_time" : "10:30 pm",
+
+        "end_time" : "11:00 pm",
+
+        "current_capacity" : 1,
+
+        "max_capacity" : 3,
+
+        "reserved_students" : [1286],
+
+        "waitlisted_students" : [1241421, 12414, 142414]
+});
+    request.send(data);
+};
+
+
+
+function printTimeslotsToPage(data) {
+    timeslotsList = "";
+    modelID = "";
+      for (i = 0; i < data.length; i++) {
+         modelID += "<div class='modal fade' id='modal" + (i + 1) + "' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel'";
+         modelID += "aria-hidden='true'><div class='modal-dialog' role='document'><div class='modal-content' id='modal" + (i + 1) + "'><div class='modal-body'>";
+         modelID += "<form id='formID" + (i + 1) + "'><div class='modal-header' style='font-size: large; font-weight: bolder;'>Book Reservation for ";
+         modelID += data[i].start_time +  " - "  + data[i].end_time + "</div><div class='form-group'><label for='recipient-name' class='col-form-label'>Name</label>";
+         modelID += "<input type='text' class='form-control' id='recipient" + (i + 1) + "''></div></form></div><div class='modal-footer'><button type='button' class='btn btn-danger'";
+         modelID += "data-dismiss='modal'>Cancel</button><a href=''><button ";
+         modelID += "type='button'onclick='reserveSlotForStudent()'class='btnbtn-success'>ConfirmReservation</button></a>";
+         modelID += "</div></div></div></div>";
+        timeslotsList += "<div style='display: inline-block; font-size: medium;'>" + data[i].start_time +  " - "  + data[i].end_time + "</div>";
+        timeslotsList += "<button style='margin-left: 10%; background-color: #3E8EDE !important; color: white; font-family: Poppins;'";
+        timeslotsList += "id='button' class='btn btn-light' data-toggle='modal' data-target='#modal" + (i + 1) + "' data-whatever='@mdo'>Book Time";
+        timeslotsList += "</button><br><br><br>";
+    }
+
+    document.getElementById("list-timeslots-on-page").innerHTML = modelID + timeslotsList;
+}
+
+
+function printNumberOfReservedStudents() {
+
+    var data = {
+        "start_time" : "5:30 pm",
+
+        "end_time" : "6:00 pm",
+
+        "current_capacity" : 1,
+
+        "max_capacity" : 3,
+
+        "reserved_students" : [128686],
+
+        "waitlisted_students" : [1241241421, 124141414, 142414414]
+};
+        reservedStudents = "<h2>Current Capacity</h2><div style='font-size: 100px'>" + data.current_capacity + "/" + data.max_capacity;
+        reservedStudents += "</div><progress value='" + data.current_capacity + "' max='" + data.max_capacity + "'";
+        reservedStudents += "style='color: #3E8EDE; border-radius: 25px;'></progress>";
+
+        document.getElementById("capacity").innerHTML = reservedStudents;
+}
+
+
+function reserveSlotForStudent() {
+   url = "http://127.0.0.1:3000/waitlisted";
+    var request = new XMLHttpRequest();
+    request.open("PUT", url, true);
+    request.setRequestHeader("Content-type", "application/json");
+
+    request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) {
+           
+        };
+    };
+      var data = JSON.stringify({
+         "start_time": "8:30 pm",
+        "end_time": "9:00 pm",
+
+        "current_capacity" : 1,
+        "max_capacity" : 3,
+
+        "reserved_students" : [2000000000],
+
+        "waitlisted_students" : [1241421]
+        /*"start_time" : data.start_time,
+
+        "end_time" : data.end_time,
+
+        "current_capacity" : 0,
+
+        "max_capacity" : 0,
+
+        "reserved_students" : [data.studentID],
+
+        "waitlisted_students" : []*/
+});
+    request.send(data);
+}
+
+
+function cancelSlotForStudent() {
+   url = "http://127.0.0.1:3000/waitlisted";
+    var request = new XMLHttpRequest();
+    request.open("DELETE", url, true);
+    request.setRequestHeader("Content-type", "application/json");
+
+    request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) {
+        
+        };
+    };
+      var data = JSON.stringify({
+        "start_time" : "10:30 pm",
+
+        "end_time" : "11:00 pm",
+
+        "current_capacity" : 1,
+
+        "max_capacity" : 3,
+
+        "reserved_students" : [1241421],
+
+        "waitlisted_students" : [1241421, 12414, 142414]
+
+
+        /*
+        "start_time" : data.start_time,
+
+        "end_time" : data.end_time,
+
+        "current_capacity" : 0,
+
+        "max_capacity" : 0,
+
+        "reserved_students" : [data.studentID],
+
+        "waitlisted_students" : []*/
+});
+    request.send(data);
+}
+
+
+
+    
+</script>
 
 </html>
