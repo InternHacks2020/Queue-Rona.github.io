@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <script src="student_registration.js"></script>
 <html>
@@ -27,6 +30,15 @@
     * {
       box-sizing: border-box;
     }
+
+
+    .table-style {
+
+      /*display: none;*/ 
+      width:90%; 
+      text-align: center;
+       margin: 1% 5%;
+     }
 
     /* Create two equal columns that floats next to each other */
     .column {
@@ -107,7 +119,7 @@
   </script>
 </head>
 
-<body style="margin: 5% 5%; width: 90%; font-family: Poppins;" onload="startTime(); getTimeslot(); printNumberOfReservedStudents()">
+<body style="margin: 5% 5%; width: 90%; font-family: Poppins;" onload="startTime(); onclick=getTimeslot(1); printNumberOfReservedStudents()">
   <a href="stafflogin.html"><button type="button" class="btn btn-light">Back</button></a>
 
   <div style="background-color: white; text-align: center;">
@@ -128,13 +140,13 @@
     <div class="dropdown">
       <button onclick="myFunction()" class="dropbtn">Select Timeslot</button>
       <div id="myDropdown" class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
+        <a href="#timeslot1" onclick="getTimeslot(1)">5:30 pm  - 7:00 pm </a>
+        <a href="#timeslot2" onclick="getTimeslot(2)">8:00 pm  - 9:30 pm</a>
         <a href="#">Link 3</a>
       </div>
     </div>
 
-    <div id='timeslot'></div>
+    <div id='timeslot1'></div>
 
 </body>
 
