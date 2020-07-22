@@ -1,6 +1,6 @@
-function getTimeslot() {
+function getTimeslot(i) {
     
-    url = "http://127.0.0.1:3002/timeslots";
+    url = "http://127.0.0.1:3000/timeslots";
     var request = new XMLHttpRequest();
     request.open("GET", url, true);
 
@@ -9,7 +9,7 @@ function getTimeslot() {
           data = request.responseText;
           data = JSON.parse(data);
           console.log(data);
-          printToPage(data);
+          printToPage(data, i);
         };
     };
     request.send();
@@ -19,22 +19,18 @@ function getTimeslot() {
     //.then(result=>console.log(result))
 }
 
-function printToPage(data) {
+function printToPage(data, i) {
 
-    var theTable = "<table style='width:90%; text-align: center; margin: 1% 5%;'>";
-        theTable += "<tr><th>Student Name</th><th colspan='2'>Status</th></tr>";
-
-    for(i = 0; i < data.length; i++) {
-        var array_of_students_names = data[i].reserved_students;
+    var theTable = "";
+    var array_of_students_names = data[i].reserved_students;
+    theTable += "<div id='timeslot" + (i + 1) + "'><table class='table-style'>";
+    theTable += "<tr><th>Student Name</th><th colspan='2'>Status</th></tr>";
         for (j = 0; j < array_of_students_names.length; j++) {
             theTable += "<tr><td>" + array_of_students_names[j] + "</td><td style='background-color: #9ee09e'>";
             theTable += "Yes</td><td>No</td></tr>";
             }
-        }
-
-    theTable += "</table>";
-
-    document.getElementById("timeslot").innerHTML = theTable;
+            theTable += "</table></div>";
+    document.getElementById("timeslot" + i).innerHTML = theTable;
   }
 
 function printNumberOfReservedStudents() {
@@ -75,3 +71,6 @@ window.onclick = function(event) {
     }
   }
 }
+
+
+
