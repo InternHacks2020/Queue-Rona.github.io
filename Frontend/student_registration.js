@@ -26,12 +26,19 @@ function printToPage(data, i) {
     theTable += "<div id='timeslot" + (i + 1) + "'><table class='table-style'>";
     theTable += "<tr><th>Student Name</th><th colspan='2'>Status</th></tr>";
         for (j = 0; j < array_of_students_names.length; j++) {
-            theTable += "<tr><td>" + array_of_students_names[j] + "</td><td style='background-color: #9ee09e'>";
-            theTable += "Yes</td><td>No</td></tr>";
+            theTable += "<tr><td>" + array_of_students_names[j] + "</td>";
+            if(j % 2 == 0) {
+              theTable += "<td style='background-color: #9ee09e'>Yes</td>";
+              theTable += "<td >No</td></tr>";
             }
-            theTable += "</table></div>";
+            else {
+              theTable += "<td>Yes</td>";
+              theTable += "<td style='background-color: #FF0000'>No</td></tr>";
+          }
+        }
+        theTable += "</table></div>";
     document.getElementById("timeslot" + i).innerHTML = theTable;
-  }
+}
 
 function printNumberOfReservedStudents() {
 
