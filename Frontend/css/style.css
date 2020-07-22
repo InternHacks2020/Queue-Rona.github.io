@@ -122,10 +122,7 @@ body{
   font-size: 13px;
   text-transform: uppercase;
 }
-.btn-one {
-  background-color: darkorange;
-  font-family: "Roboto", sans-serif;
-}
+
 .hidden {
   display: none;
 }
@@ -177,25 +174,6 @@ button {
   width: 80%;
   height: 50%; /* Could be more or less, depending on screen size */
 }
-/* clock css  --> will be added later 
-.clock{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  border: 1px solid rgba(0,0,0,0.3);
-  padding: 3px 60px;
-}
-.font{
-  font-family: 'Exo', sans-serif;
-  font-size: 50px;
-  color: white
-}
-h1{
-  margin: 0px;
-  padding: 0px;
-}
-*/
 
 h3 {
   text-align: center;

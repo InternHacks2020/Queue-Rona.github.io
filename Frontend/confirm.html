@@ -2,33 +2,53 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- SEO -->
-    <meta name="description"
-        content="queue-rona is queue system that helps contain the spread of COVID in university dining halls.">
-    <meta name="author" content="queue-rona">
+  <!-- SEO -->
+  <meta name="description"
+    content="queue-rona is queue system that helps contain the spread of COVID in university dining halls.">
+  <meta name="author" content="queue-rona">
 
-    <title>queue-rona</title>
+  <title>queue-rona</title>
 
-    <!-- Favicon -->
-    <link rel="icon" href="img/urx.png" type="image/png">
+  <!-- Favicon -->
+  <link rel="icon" href="img/urx.png" type="image/png">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body style="margin: 2% auto; width: 90%; text-align: center;">
-    <p style="font-size: xx-large; color: black; text-align: center;">Your reservation has been confirmed!</p>
-    <br><img src="img/food.jpeg"><br><br><br>
-    <a href="../../index.html" style="margin-bottom: 15px;"><button type="button" class="btn btn-light">Go Home</button></a>
+  <p style="font-size: xx-large; color: black; text-align: center;">Your reservation has been confirmed!</p>
+  <br><img src="img/food.jpeg"><br><br><br>
+  <a href="index.html" style="margin-bottom: 15px;"><button type="button" class="btn btn-light">Go
+      Home</button></a>
+
+  <button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">Cancel My
+    Reservation</button>
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Your reservation has been cancelled.</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
 </body>
 
 </html>

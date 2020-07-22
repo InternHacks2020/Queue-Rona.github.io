@@ -131,3 +131,12 @@ th, td {
 table {
   border-spacing: 5px;
 }
+.btn {
+  border: 1px solid white;
+  padding: 10px 30px;
+  color: white;
+  text-decoration: none;
+  margin-right: 5px;
+  font-size: 13px;
+  text-transform: uppercase;
+}

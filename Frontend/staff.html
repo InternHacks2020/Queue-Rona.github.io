@@ -20,9 +20,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
     * {
       box-sizing: border-box;
@@ -84,8 +85,41 @@
       </div>
     </div>
 
-    <br><button style="margin: 1% 5%; width: 90%; font-family: Poppins;" type="button" class="btn btn-light">Add
-      Student</button>
+    <!-- the other popup is on the staff view, there is a slot that says "add new time slot" and what im thinking is when you
+    click on that on the dropdown menu, it can prompt a popup window with "start/end time" and "set maximum capacity" -->
+
+    <button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">Add New Time Slot</button>
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">
+              <form>
+                <label for="appt">Start Time</label>
+                <input type="time" id="appt" name="appt">
+                <input type="submit">
+              </form><br>
+              <form>
+                <label for="appt">End Time</label>
+                <input type="time" id="appt" name="appt">
+                <input type="submit">
+              </form><br>
+              <form>
+                <label for="quantity">Set Maximum Quantity</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="30">
+                <input type="submit">
+              </form>
+            </h4>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <table style="width:90%; text-align: center; margin: 1% 5%;">
       <tr>
         <th>Student Name</th>
